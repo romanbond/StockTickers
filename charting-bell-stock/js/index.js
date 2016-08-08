@@ -1,5 +1,5 @@
 /* Created by Jason Rametta*/
-var stocks = ["BCE.TO"/*,"RCI-B.TO","QBR-B.TO","T.TO", "SJR-B.TO"*/];
+var stocks = ["AAPL"/*,"RCI-B.TO","QBR-B.TO","T.TO", "SJR-B.TO"*/];
 var data = [];
 
 /* Setup chart then get data */
@@ -45,11 +45,11 @@ function pushData(response) {
 
 function drawChart(charts) {
 	var allSeries = [['Date']];
-	
+
 	charts.map(function(chart) {
 		allSeries = modifySeries(allSeries, chart);
 	});
-	
+
 	var data = google.visualization.arrayToDataTable(allSeries);
 
 	var options = {
@@ -72,7 +72,7 @@ function modifySeries(allSeries, cStock) {
 		var first = cStock.query.results.quote.map(function(arr) {
 			return [arr.Date, parseFloat(arr.Close)];
 		});
-		
+
 		first.map(function(arr) {
 			allSeries.push(arr);
 		});
