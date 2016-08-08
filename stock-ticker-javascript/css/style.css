@@ -1,0 +1,64 @@
+#MandoLandingContent1 .CompanyStocks {
+    background-color: #EBEBEB;
+}
+#MandoLandingContent1 .CompanyStocks .negative {
+    color:red;
+    /*background-color:#C7F9C7;*/
+}
+#MandoLandingContent1 .CompanyStocks .positive {
+    color:green;
+    /*background-color:#F9C7C7;*/
+}
+#MandoLandingContent1 .CompanyStocks .variationLiveMinus {
+    /*color:red;*/
+    background-color:#F9C7C7;
+}
+#MandoLandingContent1 .CompanyStocks .variationLiveMaxus {
+    /*color:green;*/
+    background-color:#C7F9C7;
+}
+#MandoLandingContent1 .CompanyStocks .CompanyStocksWrapper {
+    overflow: hidden;
+    padding: 0.55em;
+}
+#MandoLandingContent1 .CompanyStocks .CompanyStocksWrapper > span {
+    float: left;
+}
+#MandoLandingContent1 .CompanyStocks .title {
+    font-size: 0.75em;
+    font-weight: bold;
+    width: 21%;
+}
+#MandoLandingContent1 .CompanyStocks .info {
+    font-size: 0.75em;
+    width: 38%;
+}
+#MandoLandingContent1 .CompanyStocks .CurrentValue {
+    font-size: 2.25em;
+    position: relative;
+    width: 40%;
+}
+#MandoLandingContent1 .CompanyStocks .CurrentValue span.bigCypher {
+    float: left;
+    line-height: 0.95em;
+    margin: 0 0.2em 0 0;
+}
+#MandoLandingContent1 .CompanyStocks .CurrentValue span.Symbol {
+    display: block;
+    font-size: 0.4em;
+}
+#MandoLandingContent1 .CompanyStocks .CurrentValue span.Variation {
+    display: block;
+    font-size: 0.4em;
+}
+#MandoLandingContent1 .CompanyStocks .info .Open {
+    display: block;
+}
+#MandoLandingContent1 .CompanyStocks .info .dateStock {
+    display: block;
+}
+#MandoLandingContent1 .CompanyStocks .info .Open .openLabel,
+#MandoLandingContent1 .CompanyStocks .info .Open .OpenValue{
+    color:#000;
+    background-color:transparent !important;
+}
