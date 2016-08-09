@@ -30,12 +30,62 @@
     ['2035',	91738625,	61159080]
 
 
+
+
 */
 
+    function mathStuff(){
+        var stingArray = [];
+        stingArray[0] = prompt("Sting Element 1");
+        stingArray[1] = prompt("Sting Element 2");;
+        var s1 = stingArray[0];
+        var s2 = stingArray[1];
+        var s1n = parseInt(stingArray[0]);
+        var s2n = parseInt(stingArray[1]);
+        var year1 = 2016;
+        var starter = [year1, s1, s2];
+        for(var y=0; y < s2; y++){
+            //init something[] //inVal[] here
+            var inVal = [];
+            if (y=0){
+                inVal = starter;
+            }
+
+            //create [y,e,e] values here
+                //y should be based off of the previous year (set a base year)
+                //e=e+((previous e)*0.10)
+            //add [y,e,e] values to something[] here
+            //push something[] to g.v.a[]
+        }
+
+    }
+
+
       function drawChart() {
+
+          //mathStuff();
+
+          var stingArray = [];
+          stingArray[0] = prompt("Sting Element 1");
+          stingArray[1] = prompt("Sting Element 2");;
+          var s1 = stingArray[0];
+          var s2 = stingArray[1];
+          var s1n = parseInt(stingArray[0]);
+          var s2n = parseInt(stingArray[1]);
+          var year1 = '2025';
+          var starter = [year1, s1n, s2n];
+          alert(starter);
+
+
         var data = google.visualization.arrayToDataTable([
           ['Year', '15m', '10m'],
-          ['2016',	15000000,	10000000],
+          ['2017',	16500000,	11000000],
+          ['2018',	18150000,	12100000],
+          ['2019',	19965000,	13310000]
+
+
+
+          /*
           ['2017',	16500000,	11000000],
           ['2018',	18150000,	12100000],
           ['2019',	19965000,	13310000],
@@ -54,13 +104,18 @@
           ['2032',	68924588,	45949723],
           ['2033',	75817046,	50544695],
           ['2034',	83398750,	55599164],
-          ['2035',	91738625,	61159080]
+          ['2035',	91738625,	61159080]  */    //20 years
           /*
           ['2004',  1000,      400],
           ['2005',  1170,      460],
           ['2006',  660,       1120],
           ['2007',  1030,      540]
           */
+        ]);
+
+        //This works!!
+        data.addRows([
+            [starter[0],starter[1],starter[2]]
         ]);
 
         var options = {
