@@ -1,5 +1,5 @@
 /* Created by Jason Rametta*/
-var stocks = ["AAPL","TWTR","TSLA","MSFT", "FB"];
+var stocks = ["TSLA","AAPL"/*,"TWTR","TSLA","MSFT", "FB"*/];
 var data = [];
 
 /* Setup chart then get data */
@@ -53,7 +53,7 @@ function drawChart(charts) {
 	var data = google.visualization.arrayToDataTable(allSeries);
 
 	var options = {
-		title: 'AAPL Stock - 1 Year Trend',
+		title: stocks[0]+' & '+stocks[1]+' - One Year Trend',
 		curveType: 'function',
 		vAxis: {title: 'Price'},
 		hAxis: { textPosition: 'none', direction: -1 },
