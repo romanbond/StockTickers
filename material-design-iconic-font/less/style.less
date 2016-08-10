@@ -1,0 +1,2488 @@
+/* Demo style */
+body {
+  font-family: 'Roboto', 'Helvetica Neue, Helvetica, Arial', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #212121;
+  background-color: white;
+
+  // Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 400;
+}
+
+.jumbotron {
+  color: #f5f5f5;
+  background-color: #039be5;
+  border-top: 1px solid #34a782;
+  border-bottom: 1px solid #1b926c;
+  margin-bottom: 0;
+  padding: 20px 0 20px;
+  
+  a, a:hover, a:visited {
+    color: #f5f5f5;
+  }
+  
+  h1 {
+    font-size: 30px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+#download-buttons {
+  padding: 22px 0 17px;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.icon-set p {
+  font-size: 16px;
+  i {
+    margin-right: 8px;
+  }
+}
+
+/* Material Design Iconic Font */
+
+// Variables
+// --------------------------
+@md-font-path:        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/53474";
+@md-css-prefix:       md;
+@md-version:          "1.0";
+
+@md-border-color:     grey;
+
+// Mixins
+// --------------------------
+.md-icon-rotate(@degrees, @rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation);
+  -webkit-transform: rotate(@degrees);
+  -ms-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
+
+.md-icon-flip(@horiz, @vert, @rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=@rotation, mirror=1);
+  -webkit-transform: scale(@horiz, @vert);
+  -ms-transform: scale(@horiz, @vert);
+  transform: scale(@horiz, @vert);
+}
+
+// Font path
+// --------------------------
+@font-face {
+  font-family: 'Material Design Iconic Font';
+  src: url('@{md-font-path}/Material-Design-Iconic-Font.eot?v=@{md-version}');
+  src: url('@{md-font-path}/Material-Design-Iconic-Font.eot?#iefix&v=@{md-version}') format('embedded-opentype'),
+  url('@{md-font-path}/Material-Design-Iconic-Font.woff?v=@{md-version}') format('woff'),
+  url('@{md-font-path}/Material-Design-Iconic-Font.ttf?v=@{md-version}') format('truetype'),
+  url('@{md-font-path}/Material-Design-Iconic-Font.svg?v=@{md-version}#Material-Design-Iconic-Font') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Core Class Definition
+// -------------------------
+[class^="@{md-css-prefix}-"], [class*=" @{md-css-prefix}-"] {
+  display: inline-block;
+  font: normal normal normal 14px/1 'Material Design Iconic Font';
+  font-size: inherit;
+  speak: none;
+  text-rendering: auto;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.@{md-css-prefix} {
+  line-height: inherit;
+  vertical-align: bottom;
+}
+
+// Icon sizes
+// -------------------------
+.@{md-css-prefix}-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+.@{md-css-prefix}-2x { font-size: 2em; }
+.@{md-css-prefix}-3x { font-size: 3em; }
+.@{md-css-prefix}-4x { font-size: 4em; }
+.@{md-css-prefix}-5x { font-size: 5em; }
+
+// Bordered icons
+// -------------------------
+.@{md-css-prefix}-border {
+  padding: .2em .25em .15em;
+  border: solid .08em @md-border-color;
+  border-radius: .1em;
+}
+
+.@{md-css-prefix}-border-circle {
+  padding: .2em .25em .15em;
+  border: solid .08em @md-border-color;
+  border-radius: 50%;
+}
+
+// Pulled icons
+// -------------------------
+[class^="@{md-css-prefix}-"], [class*=" @{md-css-prefix}-"] {
+  &.pull-left { float: left; margin-right: .3em; }
+  &.pull-right { float: right; margin-left: .3em; }
+}
+
+// Spinning Icons
+// --------------------------
+.@{md-css-prefix}-spin {
+   -webkit-animation: md-spin 1.5s infinite linear;
+   animation: md-spin 1.5s infinite linear;
+}
+
+.@{md-css-prefix}-spin-reverse {
+  -webkit-animation: md-spin-reverse 1.5s infinite linear;
+  animation: md-spin-reverse 1.5s infinite linear;
+}
+
+// Spin
+@-webkit-keyframes md-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes md-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+// Spin Reverse
+@-webkit-keyframes md-spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+
+@keyframes md-spin-reverse {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-359deg);
+    transform: rotate(-359deg);
+  }
+}
+
+// Rotated & Flipped icons
+// -------------------------
+.@{md-css-prefix}-rotate-90  { .md-icon-rotate(90deg, 1);  }
+.@{md-css-prefix}-rotate-180 { .md-icon-rotate(180deg, 2); }
+.@{md-css-prefix}-rotate-270 { .md-icon-rotate(270deg, 3); }
+
+.@{md-css-prefix}-flip-horizontal { .md-icon-flip(-1, 1, 0); }
+.@{md-css-prefix}-flip-vertical   { .md-icon-flip(1, -1, 2); }
+
+// Hook for IE8-9
+// -------------------------
+
+:root .@{md-css-prefix}-rotate-90,
+:root .@{md-css-prefix}-rotate-180,
+:root .@{md-css-prefix}-rotate-270,
+:root .@{md-css-prefix}-flip-horizontal,
+:root .@{md-css-prefix}-flip-vertical {
+  filter: none;
+}
+
+// Icons
+//--------------------------
+
+// Action
+.@{md-css-prefix}-3d-rotation:before {
+  content: "\f000";
+}
+.@{md-css-prefix}-accessibility:before {
+  content: "\f001";
+}
+.@{md-css-prefix}-account-balance:before {
+  content: "\f002";
+}
+.@{md-css-prefix}-account-balance-wallet:before {
+  content: "\f003";
+}
+.@{md-css-prefix}-account-box:before {
+  content: "\f004";
+}
+.@{md-css-prefix}-account-child:before {
+  content: "\f005";
+}
+.@{md-css-prefix}-account-circle:before {
+  content: "\f006";
+}
+.@{md-css-prefix}-add-shopping-cart:before {
+  content: "\f007";
+}
+.@{md-css-prefix}-alarm:before {
+  content: "\f008";
+}
+.@{md-css-prefix}-alarm-add:before {
+  content: "\f009";
+}
+.@{md-css-prefix}-alarm-off:before {
+  content: "\f00a";
+}
+.@{md-css-prefix}-alarm-on:before {
+  content: "\f00b";
+}
+.@{md-css-prefix}-android:before {
+  content: "\f00c";
+}
+.@{md-css-prefix}-announcement:before {
+  content: "\f00d";
+}
+.@{md-css-prefix}-aspect-ratio:before {
+  content: "\f00e";
+}
+.@{md-css-prefix}-assessment:before {
+  content: "\f00f";
+}
+.@{md-css-prefix}-assignment:before {
+  content: "\f010";
+}
+.@{md-css-prefix}-assignment-ind:before {
+  content: "\f011";
+}
+.@{md-css-prefix}-assignment-late:before {
+  content: "\f012";
+}
+.@{md-css-prefix}-assignment-return:before {
+  content: "\f013";
+}
+.@{md-css-prefix}-assignment-returned:before {
+  content: "\f014";
+}
+.@{md-css-prefix}-assignment-turned-in:before {
+  content: "\f015";
+}
+.@{md-css-prefix}-autorenew:before {
+  content: "\f016";
+}
+.@{md-css-prefix}-backup:before {
+  content: "\f017";
+}
+.@{md-css-prefix}-book:before {
+  content: "\f018";
+}
+.@{md-css-prefix}-bookmark:before {
+  content: "\f019";
+}
+.@{md-css-prefix}-bookmark-outline:before {
+  content: "\f01a";
+}
+.@{md-css-prefix}-bug-report:before {
+  content: "\f01b";
+}
+.@{md-css-prefix}-cached:before {
+  content: "\f01c";
+}
+.@{md-css-prefix}-class:before {
+  content: "\f01d";
+}
+.@{md-css-prefix}-credit-card:before {
+  content: "\f01e";
+}
+.@{md-css-prefix}-dashboard:before {
+  content: "\f01f";
+}
+.@{md-css-prefix}-delete:before {
+  content: "\f020";
+}
+.@{md-css-prefix}-description:before {
+  content: "\f021";
+}
+.@{md-css-prefix}-dns:before {
+  content: "\f022";
+}
+.@{md-css-prefix}-done:before {
+  content: "\f023";
+}
+.@{md-css-prefix}-done-all:before {
+  content: "\f024";
+}
+.@{md-css-prefix}-event:before {
+  content: "\f025";
+}
+.@{md-css-prefix}-exit-to-app:before {
+  content: "\f026";
+}
+.@{md-css-prefix}-explore:before {
+  content: "\f027";
+}
+.@{md-css-prefix}-extension:before {
+  content: "\f028";
+}
+.@{md-css-prefix}-face-unlock:before {
+  content: "\f029";
+}
+.@{md-css-prefix}-favorite:before {
+  content: "\f02a";
+}
+.@{md-css-prefix}-favorite-outline:before {
+  content: "\f02b";
+}
+.@{md-css-prefix}-find-in-page:before {
+  content: "\f02c";
+}
+.@{md-css-prefix}-find-replace:before {
+  content: "\f02d";
+}
+.@{md-css-prefix}-flip-to-back:before {
+  content: "\f02e";
+}
+.@{md-css-prefix}-flip-to-front:before {
+  content: "\f02f";
+}
+.@{md-css-prefix}-get-app:before {
+  content: "\f030";
+}
+.@{md-css-prefix}-grade:before {
+  content: "\f031";
+}
+.@{md-css-prefix}-group-work:before {
+  content: "\f032";
+}
+.@{md-css-prefix}-help:before {
+  content: "\f033";
+}
+.@{md-css-prefix}-highlight-remove:before {
+  content: "\f034";
+}
+.@{md-css-prefix}-history:before {
+  content: "\f035";
+}
+.@{md-css-prefix}-home:before {
+  content: "\f036";
+}
+.@{md-css-prefix}-https:before {
+  content: "\f037";
+}
+.@{md-css-prefix}-info:before {
+  content: "\f038";
+}
+.@{md-css-prefix}-info-outline:before {
+  content: "\f039";
+}
+.@{md-css-prefix}-input:before {
+  content: "\f03a";
+}
+.@{md-css-prefix}-invert-colors:before {
+  content: "\f03b";
+}
+.@{md-css-prefix}-label:before {
+  content: "\f03c";
+}
+.@{md-css-prefix}-label-outline:before {
+  content: "\f03d";
+}
+.@{md-css-prefix}-language:before {
+  content: "\f03e";
+}
+.@{md-css-prefix}-launch:before {
+  content: "\f03f";
+}
+.@{md-css-prefix}-list:before {
+  content: "\f040";
+}
+.@{md-css-prefix}-lock:before {
+  content: "\f041";
+}
+.@{md-css-prefix}-lock-open:before {
+  content: "\f042";
+}
+.@{md-css-prefix}-lock-outline:before {
+  content: "\f043";
+}
+.@{md-css-prefix}-loyalty:before {
+  content: "\f044";
+}
+.@{md-css-prefix}-markunread-mailbox:before {
+  content: "\f045";
+}
+.@{md-css-prefix}-note-add:before {
+  content: "\f046";
+}
+.@{md-css-prefix}-open-in-browser:before {
+  content: "\f047";
+}
+.@{md-css-prefix}-open-in-new:before {
+  content: "\f048";
+}
+.@{md-css-prefix}-open-with:before {
+  content: "\f049";
+}
+.@{md-css-prefix}-pageview:before {
+  content: "\f04a";
+}
+.@{md-css-prefix}-payment:before {
+  content: "\f04b";
+}
+.@{md-css-prefix}-perm-camera-mic:before {
+  content: "\f04c";
+}
+.@{md-css-prefix}-perm-contact-cal:before {
+  content: "\f04d";
+}
+.@{md-css-prefix}-perm-data-setting:before {
+  content: "\f04e";
+}
+.@{md-css-prefix}-perm-device-info:before {
+  content: "\f04f";
+}
+.@{md-css-prefix}-perm-identity:before {
+  content: "\f050";
+}
+.@{md-css-prefix}-perm-media:before {
+  content: "\f051";
+}
+.@{md-css-prefix}-perm-phone-msg:before {
+  content: "\f052";
+}
+.@{md-css-prefix}-perm-scan-wifi:before {
+  content: "\f053";
+}
+.@{md-css-prefix}-picture-in-picture:before {
+  content: "\f054";
+}
+.@{md-css-prefix}-polymer:before {
+  content: "\f055";
+}
+.@{md-css-prefix}-print:before {
+  content: "\f056";
+}
+.@{md-css-prefix}-query-builder:before {
+  content: "\f057";
+}
+.@{md-css-prefix}-question-answer:before {
+  content: "\f058";
+}
+.@{md-css-prefix}-receipt:before {
+  content: "\f059";
+}
+.@{md-css-prefix}-redeem:before {
+  content: "\f05a";
+}
+.@{md-css-prefix}-report-problem:before {
+  content: "\f05b";
+}
+.@{md-css-prefix}-restore:before {
+  content: "\f05c";
+}
+.@{md-css-prefix}-room:before {
+  content: "\f05d";
+}
+.@{md-css-prefix}-schedule:before {
+  content: "\f05e";
+}
+.@{md-css-prefix}-search:before {
+  content: "\f05f";
+}
+.@{md-css-prefix}-settings:before {
+  content: "\f060";
+}
+.@{md-css-prefix}-settings-applications:before {
+  content: "\f061";
+}
+.@{md-css-prefix}-settings-backup-restore:before {
+  content: "\f062";
+}
+.@{md-css-prefix}-settings-bluetooth:before {
+  content: "\f063";
+}
+.@{md-css-prefix}-settings-cell:before {
+  content: "\f064";
+}
+.@{md-css-prefix}-settings-display:before {
+  content: "\f065";
+}
+.@{md-css-prefix}-settings-ethernet:before {
+  content: "\f066";
+}
+.@{md-css-prefix}-settings-input-antenna:before {
+  content: "\f067";
+}
+.@{md-css-prefix}-settings-input-component:before {
+  content: "\f068";
+}
+.@{md-css-prefix}-settings-input-composite:before {
+  content: "\f069";
+}
+.@{md-css-prefix}-settings-input-hdmi:before {
+  content: "\f06a";
+}
+.@{md-css-prefix}-settings-input-svideo:before {
+  content: "\f06b";
+}
+.@{md-css-prefix}-settings-overscan:before {
+  content: "\f06c";
+}
+.@{md-css-prefix}-settings-phone:before {
+  content: "\f06d";
+}
+.@{md-css-prefix}-settings-power:before {
+  content: "\f06e";
+}
+.@{md-css-prefix}-settings-remote:before {
+  content: "\f06f";
+}
+.@{md-css-prefix}-settings-voice:before {
+  content: "\f070";
+}
+.@{md-css-prefix}-shop:before {
+  content: "\f071";
+}
+.@{md-css-prefix}-shopping-basket:before {
+  content: "\f072";
+}
+.@{md-css-prefix}-shopping-cart:before {
+  content: "\f073";
+}
+.@{md-css-prefix}-shop-two:before {
+  content: "\f074";
+}
+.@{md-css-prefix}-speaker-notes:before {
+  content: "\f075";
+}
+.@{md-css-prefix}-spellcheck:before {
+  content: "\f076";
+}
+.@{md-css-prefix}-star-rate:before {
+  content: "\f077";
+}
+.@{md-css-prefix}-stars:before {
+  content: "\f078";
+}
+.@{md-css-prefix}-store:before {
+  content: "\f079";
+}
+.@{md-css-prefix}-subject:before {
+  content: "\f07a";
+}
+.@{md-css-prefix}-swap-horiz:before {
+  content: "\f07b";
+}
+.@{md-css-prefix}-swap-vert:before {
+  content: "\f07c";
+}
+.@{md-css-prefix}-swap-vert-circle:before {
+  content: "\f07d";
+}
+.@{md-css-prefix}-system-update-tv:before {
+  content: "\f07e";
+}
+.@{md-css-prefix}-tab:before {
+  content: "\f07f";
+}
+.@{md-css-prefix}-tab-unselected:before {
+  content: "\f080";
+}
+.@{md-css-prefix}-theaters:before {
+  content: "\f081";
+}
+.@{md-css-prefix}-thumb-down:before {
+  content: "\f082";
+}
+.@{md-css-prefix}-thumbs-up-down:before {
+  content: "\f083";
+}
+.@{md-css-prefix}-thumb-up:before {
+  content: "\f084";
+}
+.@{md-css-prefix}-toc:before {
+  content: "\f085";
+}
+.@{md-css-prefix}-today:before {
+  content: "\f086";
+}
+.@{md-css-prefix}-track-changes:before {
+  content: "\f087";
+}
+.@{md-css-prefix}-translate:before {
+  content: "\f088";
+}
+.@{md-css-prefix}-trending-down:before {
+  content: "\f089";
+}
+.@{md-css-prefix}-trending-neutral:before {
+  content: "\f08a";
+}
+.@{md-css-prefix}-trending-up:before {
+  content: "\f08b";
+}
+.@{md-css-prefix}-turned-in:before {
+  content: "\f08c";
+}
+.@{md-css-prefix}-turned-in-not:before {
+  content: "\f08d";
+}
+.@{md-css-prefix}-verified-user:before {
+  content: "\f08e";
+}
+.@{md-css-prefix}-view-agenda:before {
+  content: "\f08f";
+}
+.@{md-css-prefix}-view-array:before {
+  content: "\f090";
+}
+.@{md-css-prefix}-view-carousel:before {
+  content: "\f091";
+}
+.@{md-css-prefix}-view-column:before {
+  content: "\f092";
+}
+.@{md-css-prefix}-view-day:before {
+  content: "\f093";
+}
+.@{md-css-prefix}-view-headline:before {
+  content: "\f094";
+}
+.@{md-css-prefix}-view-list:before {
+  content: "\f095";
+}
+.@{md-css-prefix}-view-module:before {
+  content: "\f096";
+}
+.@{md-css-prefix}-view-quilt:before {
+  content: "\f097";
+}
+.@{md-css-prefix}-view-stream:before {
+  content: "\f098";
+}
+.@{md-css-prefix}-view-week:before {
+  content: "\f099";
+}
+.@{md-css-prefix}-visibility:before {
+  content: "\f09a";
+}
+.@{md-css-prefix}-visibility-off:before {
+  content: "\f09b";
+}
+.@{md-css-prefix}-wallet-giftcard:before {
+  content: "\f09c";
+}
+.@{md-css-prefix}-wallet-membership:before {
+  content: "\f09d";
+}
+.@{md-css-prefix}-wallet-travel:before {
+  content: "\f09e";
+}
+.@{md-css-prefix}-work:before {
+  content: "\f09f";
+}
+
+// Alert
+.@{md-css-prefix}-error:before {
+  content: "\f0a0";
+}
+.@{md-css-prefix}-warning:before {
+  content: "\f0a1";
+}
+
+// Audio Video
+.@{md-css-prefix}-album:before {
+  content: "\f0a2";
+}
+.@{md-css-prefix}-av-timer:before {
+  content: "\f0a3";
+}
+.@{md-css-prefix}-closed-caption:before {
+  content: "\f0a4";
+}
+.@{md-css-prefix}-equalizer:before {
+  content: "\f0a5";
+}
+.@{md-css-prefix}-explicit:before {
+  content: "\f0a6";
+}
+.@{md-css-prefix}-fast-forward:before {
+  content: "\f0a7";
+}
+.@{md-css-prefix}-fast-rewind:before {
+  content: "\f0a8";
+}
+.@{md-css-prefix}-games:before {
+  content: "\f0a9";
+}
+.@{md-css-prefix}-hearing:before {
+  content: "\f0aa";
+}
+.@{md-css-prefix}-high-quality:before {
+  content: "\f0ab";
+}
+.@{md-css-prefix}-loop:before {
+  content: "\f0ac";
+}
+.@{md-css-prefix}-mic:before {
+  content: "\f0ad";
+}
+.@{md-css-prefix}-mic-none:before {
+  content: "\f0ae";
+}
+.@{md-css-prefix}-mic-off:before {
+  content: "\f0af";
+}
+.@{md-css-prefix}-movie:before {
+  content: "\f0b0";
+}
+.@{md-css-prefix}-my-library-add:before {
+  content: "\f0b1";
+}
+.@{md-css-prefix}-my-library-books:before {
+  content: "\f0b2";
+}
+.@{md-css-prefix}-my-library-music:before {
+  content: "\f0b3";
+}
+.@{md-css-prefix}-new-releases:before {
+  content: "\f0b4";
+}
+.@{md-css-prefix}-not-interested:before {
+  content: "\f0b5";
+}
+.@{md-css-prefix}-pause:before {
+  content: "\f0b6";
+}
+.@{md-css-prefix}-pause-circle-fill:before {
+  content: "\f0b7";
+}
+.@{md-css-prefix}-pause-circle-outline:before {
+  content: "\f0b8";
+}
+.@{md-css-prefix}-play-arrow:before {
+  content: "\f0b9";
+}
+.@{md-css-prefix}-play-circle-fill:before {
+  content: "\f0ba";
+}
+.@{md-css-prefix}-play-circle-outline:before {
+  content: "\f0bb";
+}
+.@{md-css-prefix}-playlist-add:before {
+  content: "\f0bc";
+}
+.@{md-css-prefix}-play-shopping-bag:before {
+  content: "\f0bd";
+}
+.@{md-css-prefix}-queue:before {
+  content: "\f0be";
+}
+.@{md-css-prefix}-queue-music:before {
+  content: "\f0bf";
+}
+.@{md-css-prefix}-radio:before {
+  content: "\f0c0";
+}
+.@{md-css-prefix}-recent-actors:before {
+  content: "\f0c1";
+}
+.@{md-css-prefix}-repeat:before {
+  content: "\f0c2";
+}
+.@{md-css-prefix}-repeat-one:before {
+  content: "\f0c3";
+}
+.@{md-css-prefix}-replay:before {
+  content: "\f0c4";
+}
+.@{md-css-prefix}-shuffle:before {
+  content: "\f0c5";
+}
+.@{md-css-prefix}-skip-next:before {
+  content: "\f0c6";
+}
+.@{md-css-prefix}-skip-previous:before {
+  content: "\f0c7";
+}
+.@{md-css-prefix}-snooze:before {
+  content: "\f0c8";
+}
+.@{md-css-prefix}-stop:before {
+  content: "\f0c9";
+}
+.@{md-css-prefix}-subtitles:before {
+  content: "\f0ca";
+}
+.@{md-css-prefix}-surround-sound:before {
+  content: "\f0cb";
+}
+.@{md-css-prefix}-videocam:before {
+  content: "\f0cc";
+}
+.@{md-css-prefix}-videocam-off:before {
+  content: "\f0cd";
+}
+.@{md-css-prefix}-video-collection:before {
+  content: "\f0ce";
+}
+.@{md-css-prefix}-volume-down:before {
+  content: "\f0cf";
+}
+.@{md-css-prefix}-volume-mute:before {
+  content: "\f0d0";
+}
+.@{md-css-prefix}-volume-off:before {
+  content: "\f0d1";
+}
+.@{md-css-prefix}-volume-up:before {
+  content: "\f0d2";
+}
+.@{md-css-prefix}-web:before {
+  content: "\f0d3";
+}
+
+// Communication
+.@{md-css-prefix}-business:before {
+  content: "\f0d4";
+}
+.@{md-css-prefix}-call:before {
+  content: "\f0d5";
+}
+.@{md-css-prefix}-call-end:before {
+  content: "\f0d6";
+}
+.@{md-css-prefix}-call-made:before {
+  content: "\f0d7";
+}
+.@{md-css-prefix}-call-merge:before {
+  content: "\f0d8";
+}
+.@{md-css-prefix}-call-missed:before {
+  content: "\f0d9";
+}
+.@{md-css-prefix}-call-received:before {
+  content: "\f0da";
+}
+.@{md-css-prefix}-call-split:before {
+  content: "\f0db";
+}
+.@{md-css-prefix}-chat:before {
+  content: "\f0dc";
+}
+.@{md-css-prefix}-clear-all:before {
+  content: "\f0dd";
+}
+.@{md-css-prefix}-comment:before {
+  content: "\f0de";
+}
+.@{md-css-prefix}-contacts:before {
+  content: "\f0df";
+}
+.@{md-css-prefix}-dialer-sip:before {
+  content: "\f0e0";
+}
+.@{md-css-prefix}-dialpad:before {
+  content: "\f0e1";
+}
+.@{md-css-prefix}-dnd-on:before {
+  content: "\f0e2";
+}
+.@{md-css-prefix}-email:before {
+  content: "\f0e3";
+}
+.@{md-css-prefix}-forum:before {
+  content: "\f0e4";
+}
+.@{md-css-prefix}-import-export:before {
+  content: "\f0e5";
+}
+.@{md-css-prefix}-invert-colors-off:before {
+  content: "\f0e6";
+}
+.@{md-css-prefix}-invert-colors-on:before {
+  content: "\f0e7";
+}
+.@{md-css-prefix}-live-help:before {
+  content: "\f0e8";
+}
+.@{md-css-prefix}-location-off:before {
+  content: "\f0e9";
+}
+.@{md-css-prefix}-location-on:before {
+  content: "\f0ea";
+}
+.@{md-css-prefix}-message:before {
+  content: "\f0eb";
+}
+.@{md-css-prefix}-messenger:before {
+  content: "\f0ec";
+}
+.@{md-css-prefix}-no-sim:before {
+  content: "\f0ed";
+}
+.@{md-css-prefix}-phone:before {
+  content: "\f0ee";
+}
+.@{md-css-prefix}-portable-wifi-off:before {
+  content: "\f0ef";
+}
+.@{md-css-prefix}-quick-contacts-dialer:before {
+  content: "\f0f0";
+}
+.@{md-css-prefix}-quick-contacts-mail:before {
+  content: "\f0f1";
+}
+.@{md-css-prefix}-ring-volume:before {
+  content: "\f0f2";
+}
+.@{md-css-prefix}-stay-current-landscape:before {
+  content: "\f0f3";
+}
+.@{md-css-prefix}-stay-current-portrait:before {
+  content: "\f0f4";
+}
+.@{md-css-prefix}-stay-primary-landscape:before {
+  content: "\f0f5";
+}
+.@{md-css-prefix}-stay-primary-portrait:before {
+  content: "\f0f6";
+}
+.@{md-css-prefix}-swap-calls:before {
+  content: "\f0f7";
+}
+.@{md-css-prefix}-textsms:before {
+  content: "\f0f8";
+}
+.@{md-css-prefix}-voicemail:before {
+  content: "\f0f9";
+}
+.@{md-css-prefix}-vpn-key:before {
+  content: "\f0fa";
+}
+
+// Content
+.@{md-css-prefix}-add:before {
+  content: "\f0fb";
+}
+.@{md-css-prefix}-add-box:before {
+  content: "\f0fc";
+}
+.@{md-css-prefix}-add-circle:before {
+  content: "\f0fd";
+}
+.@{md-css-prefix}-add-circle-outline:before {
+  content: "\f0fe";
+}
+.@{md-css-prefix}-archive:before {
+  content: "\f0ff";
+}
+.@{md-css-prefix}-backspace:before {
+  content: "\f100";
+}
+.@{md-css-prefix}-block:before {
+  content: "\f101";
+}
+.@{md-css-prefix}-clear:before {
+  content: "\f102";
+}
+.@{md-css-prefix}-content-copy:before {
+  content: "\f103";
+}
+.@{md-css-prefix}-content-cut:before {
+  content: "\f104";
+}
+.@{md-css-prefix}-content-paste:before {
+  content: "\f105";
+}
+.@{md-css-prefix}-create:before {
+  content: "\f106";
+}
+.@{md-css-prefix}-drafts:before {
+  content: "\f107";
+}
+.@{md-css-prefix}-filter-list:before {
+  content: "\f108";
+}
+.@{md-css-prefix}-flag:before {
+  content: "\f109";
+}
+.@{md-css-prefix}-forward:before {
+  content: "\f10a";
+}
+.@{md-css-prefix}-gesture:before {
+  content: "\f10b";
+}
+.@{md-css-prefix}-inbox:before {
+  content: "\f10c";
+}
+.@{md-css-prefix}-link:before {
+  content: "\f10d";
+}
+.@{md-css-prefix}-mail:before {
+  content: "\f10e";
+}
+.@{md-css-prefix}-markunread:before {
+  content: "\f10f";
+}
+.@{md-css-prefix}-redo:before {
+  content: "\f110";
+}
+.@{md-css-prefix}-remove:before {
+  content: "\f111";
+}
+.@{md-css-prefix}-remove-circle:before {
+  content: "\f112";
+}
+.@{md-css-prefix}-remove-circle-outline:before {
+  content: "\f113";
+}
+.@{md-css-prefix}-reply:before {
+  content: "\f114";
+}
+.@{md-css-prefix}-reply-all:before {
+  content: "\f115";
+}
+.@{md-css-prefix}-report:before {
+  content: "\f116";
+}
+.@{md-css-prefix}-save:before {
+  content: "\f117";
+}
+.@{md-css-prefix}-select-all:before {
+  content: "\f118";
+}
+.@{md-css-prefix}-send:before {
+  content: "\f119";
+}
+.@{md-css-prefix}-sort:before {
+  content: "\f11a";
+}
+.@{md-css-prefix}-text-format:before {
+  content: "\f11b";
+}
+.@{md-css-prefix}-undo:before {
+  content: "\f11c";
+}
+
+// Device
+.@{md-css-prefix}-access-alarm:before {
+  content: "\f11d";
+}
+.@{md-css-prefix}-access-alarms:before {
+  content: "\f11e";
+}
+.@{md-css-prefix}-access-time:before {
+  content: "\f11f";
+}
+.@{md-css-prefix}-add-alarm:before {
+  content: "\f120";
+}
+.@{md-css-prefix}-airplanemode-off:before {
+  content: "\f121";
+}
+.@{md-css-prefix}-airplanemode-on:before {
+  content: "\f122";
+}
+.@{md-css-prefix}-battery-20:before {
+  content: "\f123";
+}
+.@{md-css-prefix}-battery-30:before {
+  content: "\f124";
+}
+.@{md-css-prefix}-battery-50:before {
+  content: "\f125";
+}
+.@{md-css-prefix}-battery-60:before {
+  content: "\f126";
+}
+.@{md-css-prefix}-battery-80:before {
+  content: "\f127";
+}
+.@{md-css-prefix}-battery-90:before {
+  content: "\f128";
+}
+.@{md-css-prefix}-battery-alert:before {
+  content: "\f129";
+}
+.@{md-css-prefix}-battery-charging-20:before {
+  content: "\f12a";
+}
+.@{md-css-prefix}-battery-charging-30:before {
+  content: "\f12b";
+}
+.@{md-css-prefix}-battery-charging-50:before {
+  content: "\f12c";
+}
+.@{md-css-prefix}-battery-charging-60:before {
+  content: "\f12d";
+}
+.@{md-css-prefix}-battery-charging-80:before {
+  content: "\f12e";
+}
+.@{md-css-prefix}-battery-charging-90:before {
+  content: "\f12f";
+}
+.@{md-css-prefix}-battery-charging-full:before {
+  content: "\f130";
+}
+.@{md-css-prefix}-battery-full:before {
+  content: "\f131";
+}
+.@{md-css-prefix}-battery-std:before {
+  content: "\f132";
+}
+.@{md-css-prefix}-battery-unknown:before {
+  content: "\f133";
+}
+.@{md-css-prefix}-bluetooth:before {
+  content: "\f134";
+}
+.@{md-css-prefix}-bluetooth-connected:before {
+  content: "\f135";
+}
+.@{md-css-prefix}-bluetooth-disabled:before {
+  content: "\f136";
+}
+.@{md-css-prefix}-bluetooth-searching:before {
+  content: "\f137";
+}
+.@{md-css-prefix}-brightness-auto:before {
+  content: "\f138";
+}
+.@{md-css-prefix}-brightness-high:before {
+  content: "\f139";
+}
+.@{md-css-prefix}-brightness-low:before {
+  content: "\f13a";
+}
+.@{md-css-prefix}-brightness-medium:before {
+  content: "\f13b";
+}
+.@{md-css-prefix}-data-usage:before {
+  content: "\f13c";
+}
+.@{md-css-prefix}-developer-mode:before {
+  content: "\f13d";
+}
+.@{md-css-prefix}-devices:before {
+  content: "\f13e";
+}
+.@{md-css-prefix}-dvr:before {
+  content: "\f13f";
+}
+.@{md-css-prefix}-gps-fixed:before {
+  content: "\f140";
+}
+.@{md-css-prefix}-gps-not-fixed:before {
+  content: "\f141";
+}
+.@{md-css-prefix}-gps-off:before {
+  content: "\f142";
+}
+.@{md-css-prefix}-location-disabled:before {
+  content: "\f143";
+}
+.@{md-css-prefix}-location-searching:before {
+  content: "\f144";
+}
+.@{md-css-prefix}-multitrack-audio:before {
+  content: "\f145";
+}
+.@{md-css-prefix}-network-cell:before {
+  content: "\f146";
+}
+.@{md-css-prefix}-network-wifi:before {
+  content: "\f147";
+}
+.@{md-css-prefix}-nfc:before {
+  content: "\f148";
+}
+.@{md-css-prefix}-now-wallpaper:before {
+  content: "\f149";
+}
+.@{md-css-prefix}-now-widgets:before {
+  content: "\f14a";
+}
+.@{md-css-prefix}-screen-lock-landscape:before {
+  content: "\f14b";
+}
+.@{md-css-prefix}-screen-lock-portrait:before {
+  content: "\f14c";
+}
+.@{md-css-prefix}-screen-lock-rotation:before {
+  content: "\f14d";
+}
+.@{md-css-prefix}-screen-rotation:before {
+  content: "\f14e";
+}
+.@{md-css-prefix}-sd-storage:before {
+  content: "\f14f";
+}
+.@{md-css-prefix}-settings-system-daydream:before {
+  content: "\f150";
+}
+.@{md-css-prefix}-signal-cellular-0-bar:before {
+  content: "\f151";
+}
+.@{md-css-prefix}-signal-cellular-1-bar:before {
+  content: "\f152";
+}
+.@{md-css-prefix}-signal-cellular-2-bar:before {
+  content: "\f153";
+}
+.@{md-css-prefix}-signal-cellular-3-bar:before {
+  content: "\f154";
+}
+.@{md-css-prefix}-signal-cellular-4-bar:before {
+  content: "\f155";
+}
+.@{md-css-prefix}-signal-cellular-connected-no-internet-0-bar:before {
+  content: "\f156";
+}
+.@{md-css-prefix}-signal-cellular-connected-no-internet-1-bar:before {
+  content: "\f157";
+}
+.@{md-css-prefix}-signal-cellular-connected-no-internet-2-bar:before {
+  content: "\f158";
+}
+.@{md-css-prefix}-signal-cellular-connected-no-internet-3-bar:before {
+  content: "\f159";
+}
+.@{md-css-prefix}-signal-cellular-connected-no-internet-4-bar:before {
+  content: "\f15a";
+}
+.@{md-css-prefix}-signal-cellular-no-sim:before {
+  content: "\f15b";
+}
+.@{md-css-prefix}-signal-cellular-null:before {
+  content: "\f15c";
+}
+.@{md-css-prefix}-signal-cellular-off:before {
+  content: "\f15d";
+}
+.@{md-css-prefix}-signal-wifi-0-bar:before {
+  content: "\f15e";
+}
+.@{md-css-prefix}-signal-wifi-1-bar:before {
+  content: "\f15f";
+}
+.@{md-css-prefix}-signal-wifi-2-bar:before {
+  content: "\f160";
+}
+.@{md-css-prefix}-signal-wifi-3-bar:before {
+  content: "\f161";
+}
+.@{md-css-prefix}-signal-wifi-4-bar:before {
+  content: "\f162";
+}
+.@{md-css-prefix}-signal-wifi-off:before {
+  content: "\f163";
+}
+.@{md-css-prefix}-storage:before {
+  content: "\f164";
+}
+.@{md-css-prefix}-usb:before {
+  content: "\f165";
+}
+.@{md-css-prefix}-wifi-lock:before {
+  content: "\f166";
+}
+.@{md-css-prefix}-wifi-tethering:before {
+  content: "\f167";
+}
+
+// Editor
+.@{md-css-prefix}-attach-file:before {
+  content: "\f168";
+}
+.@{md-css-prefix}-attach-money:before {
+  content: "\f169";
+}
+.@{md-css-prefix}-border-all:before {
+  content: "\f16a";
+}
+.@{md-css-prefix}-border-bottom:before {
+  content: "\f16b";
+}
+.@{md-css-prefix}-border-clear:before {
+  content: "\f16c";
+}
+.@{md-css-prefix}-border-color:before {
+  content: "\f16d";
+}
+.@{md-css-prefix}-border-horizontal:before {
+  content: "\f16e";
+}
+.@{md-css-prefix}-border-inner:before {
+  content: "\f16f";
+}
+.@{md-css-prefix}-border-left:before {
+  content: "\f170";
+}
+.@{md-css-prefix}-border-outer:before {
+  content: "\f171";
+}
+.@{md-css-prefix}-border-right:before {
+  content: "\f172";
+}
+.@{md-css-prefix}-border-style:before {
+  content: "\f173";
+}
+.@{md-css-prefix}-border-top:before {
+  content: "\f174";
+}
+.@{md-css-prefix}-border-vertical:before {
+  content: "\f175";
+}
+.@{md-css-prefix}-format-align-center:before {
+  content: "\f176";
+}
+.@{md-css-prefix}-format-align-justify:before {
+  content: "\f177";
+}
+.@{md-css-prefix}-format-align-left:before {
+  content: "\f178";
+}
+.@{md-css-prefix}-format-align-right:before {
+  content: "\f179";
+}
+.@{md-css-prefix}-format-bold:before {
+  content: "\f17a";
+}
+.@{md-css-prefix}-format-clear:before {
+  content: "\f17b";
+}
+.@{md-css-prefix}-format-color-fill:before {
+  content: "\f17c";
+}
+.@{md-css-prefix}-format-color-reset:before {
+  content: "\f17d";
+}
+.@{md-css-prefix}-format-color-text:before {
+  content: "\f17e";
+}
+.@{md-css-prefix}-format-indent-decrease:before {
+  content: "\f17f";
+}
+.@{md-css-prefix}-format-indent-increase:before {
+  content: "\f180";
+}
+.@{md-css-prefix}-format-italic:before {
+  content: "\f181";
+}
+.@{md-css-prefix}-format-line-spacing:before {
+  content: "\f182";
+}
+.@{md-css-prefix}-format-list-bulleted:before {
+  content: "\f183";
+}
+.@{md-css-prefix}-format-list-numbered:before {
+  content: "\f184";
+}
+.@{md-css-prefix}-format-paint:before {
+  content: "\f185";
+}
+.@{md-css-prefix}-format-quote:before {
+  content: "\f186";
+}
+.@{md-css-prefix}-format-size:before {
+  content: "\f187";
+}
+.@{md-css-prefix}-format-strikethrough:before {
+  content: "\f188";
+}
+.@{md-css-prefix}-format-textdirection-l-to-r:before {
+  content: "\f189";
+}
+.@{md-css-prefix}-format-textdirection-r-to-l:before {
+  content: "\f18a";
+}
+.@{md-css-prefix}-format-underline:before {
+  content: "\f18b";
+}
+.@{md-css-prefix}-functions:before {
+  content: "\f18c";
+}
+.@{md-css-prefix}-insert-chart:before {
+  content: "\f18d";
+}
+.@{md-css-prefix}-insert-comment:before {
+  content: "\f18e";
+}
+.@{md-css-prefix}-insert-drive-file:before {
+  content: "\f18f";
+}
+.@{md-css-prefix}-insert-emoticon:before {
+  content: "\f190";
+}
+.@{md-css-prefix}-insert-invitation:before {
+  content: "\f191";
+}
+.@{md-css-prefix}-insert-link:before {
+  content: "\f192";
+}
+.@{md-css-prefix}-insert-photo:before {
+  content: "\f193";
+}
+.@{md-css-prefix}-merge-type:before {
+  content: "\f194";
+}
+.@{md-css-prefix}-mode-comment:before {
+  content: "\f195";
+}
+.@{md-css-prefix}-mode-edit:before {
+  content: "\f196";
+}
+.@{md-css-prefix}-publish:before {
+  content: "\f197";
+}
+.@{md-css-prefix}-vertical-align-bottom:before {
+  content: "\f198";
+}
+.@{md-css-prefix}-vertical-align-center:before {
+  content: "\f199";
+}
+.@{md-css-prefix}-vertical-align-top:before {
+  content: "\f19a";
+}
+.@{md-css-prefix}-wrap-text:before {
+  content: "\f19b";
+}
+
+// File
+.@{md-css-prefix}-attachment:before {
+  content: "\f19c";
+}
+.@{md-css-prefix}-cloud:before {
+  content: "\f19d";
+}
+.@{md-css-prefix}-cloud-circle:before {
+  content: "\f19e";
+}
+.@{md-css-prefix}-cloud-done:before {
+  content: "\f19f";
+}
+.@{md-css-prefix}-cloud-download:before {
+  content: "\f1a0";
+}
+.@{md-css-prefix}-cloud-off:before {
+  content: "\f1a1";
+}
+.@{md-css-prefix}-cloud-queue:before {
+  content: "\f1a2";
+}
+.@{md-css-prefix}-cloud-upload:before {
+  content: "\f1a3";
+}
+.@{md-css-prefix}-file-download:before {
+  content: "\f1a4";
+}
+.@{md-css-prefix}-file-upload:before {
+  content: "\f1a5";
+}
+.@{md-css-prefix}-folder:before {
+  content: "\f1a6";
+}
+.@{md-css-prefix}-folder-open:before {
+  content: "\f1a7";
+}
+.@{md-css-prefix}-folder-shared:before {
+  content: "\f1a8";
+}
+
+// Hardware
+.@{md-css-prefix}-cast:before {
+  content: "\f1a9";
+}
+.@{md-css-prefix}-cast-connected:before {
+  content: "\f1aa";
+}
+.@{md-css-prefix}-computer:before {
+  content: "\f1ab";
+}
+.@{md-css-prefix}-desktop-mac:before {
+  content: "\f1ac";
+}
+.@{md-css-prefix}-desktop-windows:before {
+  content: "\f1ad";
+}
+.@{md-css-prefix}-dock:before {
+  content: "\f1ae";
+}
+.@{md-css-prefix}-gamepad:before {
+  content: "\f1af";
+}
+.@{md-css-prefix}-headset:before {
+  content: "\f1b0";
+}
+.@{md-css-prefix}-headset-mic:before {
+  content: "\f1b1";
+}
+.@{md-css-prefix}-keyboard:before {
+  content: "\f1b2";
+}
+.@{md-css-prefix}-keyboard-alt:before {
+  content: "\f1b3";
+}
+.@{md-css-prefix}-keyboard-arrow-down:before {
+  content: "\f1b4";
+}
+.@{md-css-prefix}-keyboard-arrow-left:before {
+  content: "\f1b5";
+}
+.@{md-css-prefix}-keyboard-arrow-right:before {
+  content: "\f1b6";
+}
+.@{md-css-prefix}-keyboard-arrow-up:before {
+  content: "\f1b7";
+}
+.@{md-css-prefix}-keyboard-backspace:before {
+  content: "\f1b8";
+}
+.@{md-css-prefix}-keyboard-capslock:before {
+  content: "\f1b9";
+}
+.@{md-css-prefix}-keyboard-control:before {
+  content: "\f1ba";
+}
+.@{md-css-prefix}-keyboard-hide:before {
+  content: "\f1bb";
+}
+.@{md-css-prefix}-keyboard-return:before {
+  content: "\f1bc";
+}
+.@{md-css-prefix}-keyboard-tab:before {
+  content: "\f1bd";
+}
+.@{md-css-prefix}-keyboard-voice:before {
+  content: "\f1be";
+}
+.@{md-css-prefix}-laptop:before {
+  content: "\f1bf";
+}
+.@{md-css-prefix}-laptop-chromebook:before {
+  content: "\f1c0";
+}
+.@{md-css-prefix}-laptop-mac:before {
+  content: "\f1c1";
+}
+.@{md-css-prefix}-laptop-windows:before {
+  content: "\f1c2";
+}
+.@{md-css-prefix}-memory:before {
+  content: "\f1c3";
+}
+.@{md-css-prefix}-mouse:before {
+  content: "\f1c4";
+}
+.@{md-css-prefix}-phone-android:before {
+  content: "\f1c5";
+}
+.@{md-css-prefix}-phone-iphone:before {
+  content: "\f1c6";
+}
+.@{md-css-prefix}-phonelink:before {
+  content: "\f1c7";
+}
+.@{md-css-prefix}-phonelink-off:before {
+  content: "\f1c8";
+}
+.@{md-css-prefix}-security:before {
+  content: "\f1c9";
+}
+.@{md-css-prefix}-sim-card:before {
+  content: "\f1ca";
+}
+.@{md-css-prefix}-smartphone:before {
+  content: "\f1cb";
+}
+.@{md-css-prefix}-speaker:before {
+  content: "\f1cc";
+}
+.@{md-css-prefix}-tablet:before {
+  content: "\f1cd";
+}
+.@{md-css-prefix}-tablet-android:before {
+  content: "\f1ce";
+}
+.@{md-css-prefix}-tablet-mac:before {
+  content: "\f1cf";
+}
+.@{md-css-prefix}-tv:before {
+  content: "\f1d0";
+}
+.@{md-css-prefix}-watch:before {
+  content: "\f1d1";
+}
+
+// Image
+.@{md-css-prefix}-add-to-photos:before {
+  content: "\f1d2";
+}
+.@{md-css-prefix}-adjust:before {
+  content: "\f1d3";
+}
+.@{md-css-prefix}-assistant-photo:before {
+  content: "\f1d4";
+}
+.@{md-css-prefix}-audiotrack:before {
+  content: "\f1d5";
+}
+.@{md-css-prefix}-blur-circular:before {
+  content: "\f1d6";
+}
+.@{md-css-prefix}-blur-linear:before {
+  content: "\f1d7";
+}
+.@{md-css-prefix}-blur-off:before {
+  content: "\f1d8";
+}
+.@{md-css-prefix}-blur-on:before {
+  content: "\f1d9";
+}
+.@{md-css-prefix}-brightness-1:before {
+  content: "\f1da";
+}
+.@{md-css-prefix}-brightness-2:before {
+  content: "\f1db";
+}
+.@{md-css-prefix}-brightness-3:before {
+  content: "\f1dc";
+}
+.@{md-css-prefix}-brightness-4:before {
+  content: "\f1dd";
+}
+.@{md-css-prefix}-brightness-5:before {
+  content: "\f1de";
+}
+.@{md-css-prefix}-brightness-6:before {
+  content: "\f1df";
+}
+.@{md-css-prefix}-brightness-7:before {
+  content: "\f1e0";
+}
+.@{md-css-prefix}-brush:before {
+  content: "\f1e1";
+}
+.@{md-css-prefix}-camera:before {
+  content: "\f1e2";
+}
+.@{md-css-prefix}-camera-alt:before {
+  content: "\f1e3";
+}
+.@{md-css-prefix}-camera-front:before {
+  content: "\f1e4";
+}
+.@{md-css-prefix}-camera-rear:before {
+  content: "\f1e5";
+}
+.@{md-css-prefix}-camera-roll:before {
+  content: "\f1e6";
+}
+.@{md-css-prefix}-center-focus-strong:before {
+  content: "\f1e7";
+}
+.@{md-css-prefix}-center-focus-weak:before {
+  content: "\f1e8";
+}
+.@{md-css-prefix}-collections:before {
+  content: "\f1e9";
+}
+.@{md-css-prefix}-colorize:before {
+  content: "\f1ea";
+}
+.@{md-css-prefix}-color-lens:before {
+  content: "\f1eb";
+}
+.@{md-css-prefix}-compare:before {
+  content: "\f1ec";
+}
+.@{md-css-prefix}-control-point:before {
+  content: "\f1ed";
+}
+.@{md-css-prefix}-control-point-duplicate:before {
+  content: "\f1ee";
+}
+.@{md-css-prefix}-crop:before {
+  content: "\f1ef";
+}
+.@{md-css-prefix}-crop-3-2:before {
+  content: "\f1f0";
+}
+.@{md-css-prefix}-crop-5-4:before {
+  content: "\f1f1";
+}
+.@{md-css-prefix}-crop-7-5:before {
+  content: "\f1f2";
+}
+.@{md-css-prefix}-crop-16-9:before {
+  content: "\f1f3";
+}
+.@{md-css-prefix}-crop-din:before {
+  content: "\f1f4";
+}
+.@{md-css-prefix}-crop-free:before {
+  content: "\f1f5";
+}
+.@{md-css-prefix}-crop-landscape:before {
+  content: "\f1f6";
+}
+.@{md-css-prefix}-crop-original:before {
+  content: "\f1f7";
+}
+.@{md-css-prefix}-crop-portrait:before {
+  content: "\f1f8";
+}
+.@{md-css-prefix}-crop-square:before {
+  content: "\f1f9";
+}
+.@{md-css-prefix}-dehaze:before {
+  content: "\f1fa";
+}
+.@{md-css-prefix}-details:before {
+  content: "\f1fb";
+}
+.@{md-css-prefix}-edit:before {
+  content: "\f1fc";
+}
+.@{md-css-prefix}-exposure:before {
+  content: "\f1fd";
+}
+.@{md-css-prefix}-exposure-minus-1:before {
+  content: "\f1fe";
+}
+.@{md-css-prefix}-exposure-minus-2:before {
+  content: "\f1ff";
+}
+.@{md-css-prefix}-exposure-zero:before {
+  content: "\f200";
+}
+.@{md-css-prefix}-exposure-plus-1:before {
+  content: "\f201";
+}
+.@{md-css-prefix}-exposure-plus-2:before {
+  content: "\f202";
+}
+.@{md-css-prefix}-filter:before {
+  content: "\f203";
+}
+.@{md-css-prefix}-filter-1:before {
+  content: "\f204";
+}
+.@{md-css-prefix}-filter-2:before {
+  content: "\f205";
+}
+.@{md-css-prefix}-filter-3:before {
+  content: "\f206";
+}
+.@{md-css-prefix}-filter-4:before {
+  content: "\f207";
+}
+.@{md-css-prefix}-filter-5:before {
+  content: "\f208";
+}
+.@{md-css-prefix}-filter-6:before {
+  content: "\f209";
+}
+.@{md-css-prefix}-filter-7:before {
+  content: "\f20a";
+}
+.@{md-css-prefix}-filter-8:before {
+  content: "\f20b";
+}
+.@{md-css-prefix}-filter-9:before {
+  content: "\f20c";
+}
+.@{md-css-prefix}-filter-9-plus:before {
+  content: "\f20d";
+}
+.@{md-css-prefix}-filter-b-and-w:before {
+  content: "\f20e";
+}
+.@{md-css-prefix}-filter-center-focus:before {
+  content: "\f20f";
+}
+.@{md-css-prefix}-filter-drama:before {
+  content: "\f210";
+}
+.@{md-css-prefix}-filter-frames:before {
+  content: "\f211";
+}
+.@{md-css-prefix}-filter-hdr:before {
+  content: "\f212";
+}
+.@{md-css-prefix}-filter-none:before {
+  content: "\f213";
+}
+.@{md-css-prefix}-filter-tilt-shift:before {
+  content: "\f214";
+}
+.@{md-css-prefix}-filter-vintage:before {
+  content: "\f215";
+}
+.@{md-css-prefix}-flare:before {
+  content: "\f216";
+}
+.@{md-css-prefix}-flash-auto:before {
+  content: "\f217";
+}
+.@{md-css-prefix}-flash-off:before {
+  content: "\f218";
+}
+.@{md-css-prefix}-flash-on:before {
+  content: "\f219";
+}
+.@{md-css-prefix}-flip:before {
+  content: "\f21a";
+}
+.@{md-css-prefix}-gradient:before {
+  content: "\f21b";
+}
+.@{md-css-prefix}-grain:before {
+  content: "\f21c";
+}
+.@{md-css-prefix}-grid-off:before {
+  content: "\f21d";
+}
+.@{md-css-prefix}-grid-on:before {
+  content: "\f21e";
+}
+.@{md-css-prefix}-hdr-off:before {
+  content: "\f21f";
+}
+.@{md-css-prefix}-hdr-on:before {
+  content: "\f220";
+}
+.@{md-css-prefix}-hdr-strong:before {
+  content: "\f221";
+}
+.@{md-css-prefix}-hdr-weak:before {
+  content: "\f222";
+}
+.@{md-css-prefix}-healing:before {
+  content: "\f223";
+}
+.@{md-css-prefix}-image:before {
+  content: "\f224";
+}
+.@{md-css-prefix}-image-aspect-ratio:before {
+  content: "\f225";
+}
+.@{md-css-prefix}-iso:before {
+  content: "\f226";
+}
+.@{md-css-prefix}-landscape:before {
+  content: "\f227";
+}
+.@{md-css-prefix}-leak-add:before {
+  content: "\f228";
+}
+.@{md-css-prefix}-leak-remove:before {
+  content: "\f229";
+}
+.@{md-css-prefix}-lens:before {
+  content: "\f22a";
+}
+.@{md-css-prefix}-looks:before {
+  content: "\f22b";
+}
+.@{md-css-prefix}-looks-1:before {
+  content: "\f22c";
+}
+.@{md-css-prefix}-looks-2:before {
+  content: "\f22d";
+}
+.@{md-css-prefix}-looks-3:before {
+  content: "\f22e";
+}
+.@{md-css-prefix}-looks-4:before {
+  content: "\f22f";
+}
+.@{md-css-prefix}-looks-5:before {
+  content: "\f230";
+}
+.@{md-css-prefix}-looks-6:before {
+  content: "\f231";
+}
+.@{md-css-prefix}-loupe:before {
+  content: "\f232";
+}
+.@{md-css-prefix}-movie-creation:before {
+  content: "\f233";
+}
+.@{md-css-prefix}-nature:before {
+  content: "\f234";
+}
+.@{md-css-prefix}-nature-people:before {
+  content: "\f235";
+}
+.@{md-css-prefix}-navigate-before:before {
+  content: "\f236";
+}
+.@{md-css-prefix}-navigate-next:before {
+  content: "\f237";
+}
+.@{md-css-prefix}-palette:before {
+  content: "\f238";
+}
+.@{md-css-prefix}-panorama:before {
+  content: "\f239";
+}
+.@{md-css-prefix}-panorama-fisheye:before {
+  content: "\f23a";
+}
+.@{md-css-prefix}-panorama-horizontal:before {
+  content: "\f23b";
+}
+.@{md-css-prefix}-panorama-vertical:before {
+  content: "\f23c";
+}
+.@{md-css-prefix}-panorama-wide-angle:before {
+  content: "\f23d";
+}
+.@{md-css-prefix}-photo:before {
+  content: "\f23e";
+}
+.@{md-css-prefix}-photo-album:before {
+  content: "\f23f";
+}
+.@{md-css-prefix}-photo-camera:before {
+  content: "\f240";
+}
+.@{md-css-prefix}-photo-library:before {
+  content: "\f241";
+}
+.@{md-css-prefix}-portrait:before {
+  content: "\f242";
+}
+.@{md-css-prefix}-remove-red-eye:before {
+  content: "\f243";
+}
+.@{md-css-prefix}-rotate-left:before {
+  content: "\f244";
+}
+.@{md-css-prefix}-rotate-right:before {
+  content: "\f245";
+}
+.@{md-css-prefix}-slideshow:before {
+  content: "\f246";
+}
+.@{md-css-prefix}-straighten:before {
+  content: "\f247";
+}
+.@{md-css-prefix}-style:before {
+  content: "\f248";
+}
+.@{md-css-prefix}-switch-camera:before {
+  content: "\f249";
+}
+.@{md-css-prefix}-switch-video:before {
+  content: "\f24a";
+}
+.@{md-css-prefix}-tag-faces:before {
+  content: "\f24b";
+}
+.@{md-css-prefix}-texture:before {
+  content: "\f24c";
+}
+.@{md-css-prefix}-timelapse:before {
+  content: "\f24d";
+}
+.@{md-css-prefix}-timer:before {
+  content: "\f24e";
+}
+.@{md-css-prefix}-timer-3:before {
+  content: "\f24f";
+}
+.@{md-css-prefix}-timer-10:before {
+  content: "\f250";
+}
+.@{md-css-prefix}-timer-auto:before {
+  content: "\f251";
+}
+.@{md-css-prefix}-timer-off:before {
+  content: "\f252";
+}
+.@{md-css-prefix}-tonality:before {
+  content: "\f253";
+}
+.@{md-css-prefix}-transform:before {
+  content: "\f254";
+}
+.@{md-css-prefix}-tune:before {
+  content: "\f255";
+}
+.@{md-css-prefix}-wb-auto:before {
+  content: "\f256";
+}
+.@{md-css-prefix}-wb-cloudy:before {
+  content: "\f257";
+}
+.@{md-css-prefix}-wb-incandescent:before {
+  content: "\f258";
+}
+.@{md-css-prefix}-wb-irradescent:before {
+  content: "\f259";
+}
+.@{md-css-prefix}-wb-sunny:before {
+  content: "\f25a";
+}
+
+// Maps
+.@{md-css-prefix}-beenhere:before {
+  content: "\f25b";
+}
+.@{md-css-prefix}-directions:before {
+  content: "\f25c";
+}
+.@{md-css-prefix}-directions-bike:before {
+  content: "\f25d";
+}
+.@{md-css-prefix}-directions-bus:before {
+  content: "\f25e";
+}
+.@{md-css-prefix}-directions-car:before {
+  content: "\f25f";
+}
+.@{md-css-prefix}-directions-ferry:before {
+  content: "\f260";
+}
+.@{md-css-prefix}-directions-subway:before {
+  content: "\f261";
+}
+.@{md-css-prefix}-directions-train:before {
+  content: "\f262";
+}
+.@{md-css-prefix}-directions-transit:before {
+  content: "\f263";
+}
+.@{md-css-prefix}-directions-walk:before {
+  content: "\f264";
+}
+.@{md-css-prefix}-flight:before {
+  content: "\f265";
+}
+.@{md-css-prefix}-hotel:before {
+  content: "\f266";
+}
+.@{md-css-prefix}-layers:before {
+  content: "\f267";
+}
+.@{md-css-prefix}-layers-clear:before {
+  content: "\f268";
+}
+.@{md-css-prefix}-local-airport:before {
+  content: "\f269";
+}
+.@{md-css-prefix}-local-atm:before {
+  content: "\f26a";
+}
+.@{md-css-prefix}-local-attraction:before {
+  content: "\f26b";
+}
+.@{md-css-prefix}-local-bar:before {
+  content: "\f26c";
+}
+.@{md-css-prefix}-local-cafe:before {
+  content: "\f26d";
+}
+.@{md-css-prefix}-local-car-wash:before {
+  content: "\f26e";
+}
+.@{md-css-prefix}-local-convenience-store:before {
+  content: "\f26f";
+}
+.@{md-css-prefix}-local-drink:before {
+  content: "\f270";
+}
+.@{md-css-prefix}-local-florist:before {
+  content: "\f271";
+}
+.@{md-css-prefix}-local-gas-station:before {
+  content: "\f272";
+}
+.@{md-css-prefix}-local-grocery-store:before {
+  content: "\f273";
+}
+.@{md-css-prefix}-local-hospital:before {
+  content: "\f274";
+}
+.@{md-css-prefix}-local-hotel:before {
+  content: "\f275";
+}
+.@{md-css-prefix}-local-laundry-service:before {
+  content: "\f276";
+}
+.@{md-css-prefix}-local-library:before {
+  content: "\f277";
+}
+.@{md-css-prefix}-local-mall:before {
+  content: "\f278";
+}
+.@{md-css-prefix}-local-movies:before {
+  content: "\f279";
+}
+.@{md-css-prefix}-local-offer:before {
+  content: "\f27a";
+}
+.@{md-css-prefix}-local-parking:before {
+  content: "\f27b";
+}
+.@{md-css-prefix}-local-pharmacy:before {
+  content: "\f27c";
+}
+.@{md-css-prefix}-local-phone:before {
+  content: "\f27d";
+}
+.@{md-css-prefix}-local-pizza:before {
+  content: "\f27e";
+}
+.@{md-css-prefix}-local-play:before {
+  content: "\f27f";
+}
+.@{md-css-prefix}-local-post-office:before {
+  content: "\f280";
+}
+.@{md-css-prefix}-local-print-shop:before {
+  content: "\f281";
+}
+.@{md-css-prefix}-local-restaurant:before {
+  content: "\f282";
+}
+.@{md-css-prefix}-local-see:before {
+  content: "\f283";
+}
+.@{md-css-prefix}-local-shipping:before {
+  content: "\f284";
+}
+.@{md-css-prefix}-local-taxi:before {
+  content: "\f285";
+}
+.@{md-css-prefix}-location-history:before {
+  content: "\f286";
+}
+.@{md-css-prefix}-map:before {
+  content: "\f287";
+}
+.@{md-css-prefix}-my-location:before {
+  content: "\f288";
+}
+.@{md-css-prefix}-navigation:before {
+  content: "\f289";
+}
+.@{md-css-prefix}-pin-drop:before {
+  content: "\f28a";
+}
+.@{md-css-prefix}-place:before {
+  content: "\f28b";
+}
+.@{md-css-prefix}-rate-review:before {
+  content: "\f28c";
+}
+.@{md-css-prefix}-restaurant-menu:before {
+  content: "\f28d";
+}
+.@{md-css-prefix}-satellite:before {
+  content: "\f28e";
+}
+.@{md-css-prefix}-store-mall-directory:before {
+  content: "\f28f";
+}
+.@{md-css-prefix}-terrain:before {
+  content: "\f290";
+}
+.@{md-css-prefix}-traffic:before {
+  content: "\f291";
+}
+
+// Navigation
+.@{md-css-prefix}-apps:before {
+  content: "\f292";
+}
+.@{md-css-prefix}-cancel:before {
+  content: "\f293";
+}
+.@{md-css-prefix}-arrow-drop-down-circle:before {
+  content: "\f294";
+}
+.@{md-css-prefix}-arrow-drop-down:before {
+  content: "\f295";
+}
+.@{md-css-prefix}-arrow-drop-up:before {
+  content: "\f296";
+}
+.@{md-css-prefix}-arrow-back:before {
+  content: "\f297";
+}
+.@{md-css-prefix}-arrow-forward:before {
+  content: "\f298";
+}
+.@{md-css-prefix}-check:before {
+  content: "\f299";
+}
+.@{md-css-prefix}-close:before {
+  content: "\f29a";
+}
+.@{md-css-prefix}-chevron-left:before {
+  content: "\f29b";
+}
+.@{md-css-prefix}-chevron-right:before {
+  content: "\f29c";
+}
+.@{md-css-prefix}-expand-less:before {
+  content: "\f29d";
+}
+.@{md-css-prefix}-expand-more:before {
+  content: "\f29e";
+}
+.@{md-css-prefix}-fullscreen:before {
+  content: "\f29f";
+}
+.@{md-css-prefix}-fullscreen-exit:before {
+  content: "\f2a0";
+}
+.@{md-css-prefix}-menu:before {
+  content: "\f2a1";
+}
+.@{md-css-prefix}-more-horiz:before {
+  content: "\f2a2";
+}
+.@{md-css-prefix}-more-vert:before {
+  content: "\f2a3";
+}
+.@{md-css-prefix}-refresh:before {
+  content: "\f2a4";
+}
+.@{md-css-prefix}-unfold-less:before {
+  content: "\f2a5";
+}
+.@{md-css-prefix}-unfold-more:before {
+  content: "\f2a6";
+}
+
+// Notification
+.@{md-css-prefix}-adb:before {
+  content: "\f2a7";
+}
+.@{md-css-prefix}-bluetooth-audio:before {
+  content: "\f2a8";
+}
+.@{md-css-prefix}-disc-full:before {
+  content: "\f2a9";
+}
+.@{md-css-prefix}-dnd-forwardslash:before {
+  content: "\f2aa";
+}
+.@{md-css-prefix}-do-not-disturb:before {
+  content: "\f2ab";
+}
+.@{md-css-prefix}-drive-eta:before {
+  content: "\f2ac";
+}
+.@{md-css-prefix}-event-available:before {
+  content: "\f2ad";
+}
+.@{md-css-prefix}-event-busy:before {
+  content: "\f2ae";
+}
+.@{md-css-prefix}-event-note:before {
+  content: "\f2af";
+}
+.@{md-css-prefix}-folder-special:before {
+  content: "\f2b0";
+}
+.@{md-css-prefix}-mms:before {
+  content: "\f2b1";
+}
+.@{md-css-prefix}-more:before {
+  content: "\f2b2";
+}
+.@{md-css-prefix}-network-locked:before {
+  content: "\f2b3";
+}
+.@{md-css-prefix}-phone-bluetooth-speaker:before {
+  content: "\f2b4";
+}
+.@{md-css-prefix}-phone-forwarded:before {
+  content: "\f2b5";
+}
+.@{md-css-prefix}-phone-in-talk:before {
+  content: "\f2b6";
+}
+.@{md-css-prefix}-phone-locked:before {
+  content: "\f2b7";
+}
+.@{md-css-prefix}-phone-missed:before {
+  content: "\f2b8";
+}
+.@{md-css-prefix}-phone-paused:before {
+  content: "\f2b9";
+}
+.@{md-css-prefix}-play-download:before {
+  content: "\f2ba";
+}
+.@{md-css-prefix}-play-install:before {
+  content: "\f2bb";
+}
+.@{md-css-prefix}-sd-card:before {
+  content: "\f2bc";
+}
+.@{md-css-prefix}-sim-card-alert:before {
+  content: "\f2bd";
+}
+.@{md-css-prefix}-sms:before {
+  content: "\f2be";
+}
+.@{md-css-prefix}-sms-failed:before {
+  content: "\f2bf";
+}
+.@{md-css-prefix}-sync:before {
+  content: "\f2c0";
+}
+.@{md-css-prefix}-sync-disabled:before {
+  content: "\f2c1";
+}
+.@{md-css-prefix}-sync-problem:before {
+  content: "\f2c2";
+}
+.@{md-css-prefix}-system-update:before {
+  content: "\f2c3";
+}
+.@{md-css-prefix}-tap-and-play:before {
+  content: "\f2c4";
+}
+.@{md-css-prefix}-time-to-leave:before {
+  content: "\f2c5";
+}
+.@{md-css-prefix}-vibration:before {
+  content: "\f2c6";
+}
+.@{md-css-prefix}-voice-chat:before {
+  content: "\f2c7";
+}
+.@{md-css-prefix}-vpn-lock:before {
+  content: "\f2c8";
+}
+
+// Social
+.@{md-css-prefix}-cake:before {
+  content: "\f2c9";
+}
+.@{md-css-prefix}-domain:before {
+  content: "\f2ca";
+}
+.@{md-css-prefix}-location-city:before {
+  content: "\f2cb";
+}
+.@{md-css-prefix}-mood:before {
+  content: "\f2cc";
+}
+.@{md-css-prefix}-notifications-none:before {
+  content: "\f2cd";
+}
+.@{md-css-prefix}-notifications:before {
+  content: "\f2ce";
+}
+.@{md-css-prefix}-notifications-off:before {
+  content: "\f2cf";
+}
+.@{md-css-prefix}-notifications-on:before {
+  content: "\f2d0";
+}
+.@{md-css-prefix}-notifications-paused:before {
+  content: "\f2d1";
+}
+.@{md-css-prefix}-pages:before {
+  content: "\f2d2";
+}
+.@{md-css-prefix}-party-mode:before {
+  content: "\f2d3";
+}
+.@{md-css-prefix}-group:before {
+  content: "\f2d4";
+}
+.@{md-css-prefix}-group-add:before {
+  content: "\f2d5";
+}
+.@{md-css-prefix}-people:before {
+  content: "\f2d6";
+}
+.@{md-css-prefix}-people-outline:before {
+  content: "\f2d7";
+}
+.@{md-css-prefix}-person:before {
+  content: "\f2d8";
+}
+.@{md-css-prefix}-person-add:before {
+  content: "\f2d9";
+}
+.@{md-css-prefix}-person-outline:before {
+  content: "\f2da";
+}
+.@{md-css-prefix}-plus-one:before {
+  content: "\f2db";
+}
+.@{md-css-prefix}-poll:before {
+  content: "\f2dc";
+}
+.@{md-css-prefix}-public:before {
+  content: "\f2dd";
+}
+.@{md-css-prefix}-school:before {
+  content: "\f2de";
+}
+.@{md-css-prefix}-share:before {
+  content: "\f2df";
+}
+.@{md-css-prefix}-whatshot:before {
+  content: "\f2e0";
+}
+
+// Toggle
+.@{md-css-prefix}-check-box:before {
+  content: "\f2e1";
+}
+.@{md-css-prefix}-check-box-outline-blank:before {
+  content: "\f2e2";
+}
+.@{md-css-prefix}-radio-button-off:before {
+  content: "\f2e3";
+}
+.@{md-css-prefix}-radio-button-on:before {
+  content: "\f2e4";
+}
+.@{md-css-prefix}-star:before {
+  content: "\f2e5";
+}
+.@{md-css-prefix}-star-half:before {
+  content: "\f2e6";
+}
+.@{md-css-prefix}-star-outline:before {
+  content: "\f2e7";
+}
