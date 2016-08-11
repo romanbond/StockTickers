@@ -3,44 +3,102 @@
   <head>
     <meta charset="UTF-8">
     <title>Flyout Menu with ARIA attributes</title>
-    
-    
+
+
     <link rel="stylesheet" href="css/reset.css">
 
-    
+
         <link rel="stylesheet" href="css/style.css">
 
-    
-    
-    
+
+
+
   </head>
 
   <body>
 
-    
+
 <header>
   <nav role="navigation">
     <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Portfolio</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="#">Unix</a></li>
+      <li><a href="#">macOS</a></li>
+      <li><a href="#">Windows</a></li>
+      <li><a href="#">Mobile</a></li>
     </ul>
   </nav>
 </header>
 <article>
-  <h1>The Cosmos Awaits</h1>
-  <p>Permanence of the stars Jean-François Champollion, the ash of stellar alchemy, hearts of the stars with pretty stories for which there's little good evidence? Laws of physics network of wormholes Drake Equation rings of Uranus science culture realm of the galaxies another world permanence of the stars. As a patch of light Orion's sword, explorations, at the edge of forever another world Drake Equation colonies. Something incredible is waiting to be known explorations shores of the cosmic ocean another world, a billion trillion globular star cluster something incredible is waiting to be known, corpus callosum extraordinary claims require extraordinary evidence, rings of Uranus, dream of the mind's eye hundreds of thousands.</p>
-  <p>Gathered by gravity? Tingling of the spine. Orion's sword. Extraplanetary take root and flourish a billion trillion intelligent beings. Sea of Tranquility the carbon in our apple pies? Permanence of the stars. Dream of the mind's eye! Kindling the energy hidden in matter vastness is bearable only through love, corpus callosum a mote of dust suspended in a sunbeam, bits of moving fluff Rig Veda Vangelis vanquish the impossible! Inconspicuous motes of rock and gas with pretty stories for which there's little good evidence consciousness as a patch of light Euclid? Rings of Uranus tesseract shores of the cosmic ocean rich in heavy atoms rings of Uranus hundreds of thousands, globular star cluster prime number birth?</p>
-  <p>Tunguska event Rig Veda from which we spring ship of the imagination a billion trillion, Sea of Tranquility Flatland, circumnavigated Vangelis kindling the energy hidden in matter? As a patch of light, inconspicuous motes of rock and gas? The sky calls to us. At the edge of forever! Muse about, shores of the cosmic ocean the carbon in our apple pies rings of Uranus. Cosmic fugue tendrils of gossamer clouds, light years laws of physics! Drake Equation Vangelis, something incredible is waiting to be known billions upon billions muse about, at the edge of forever! Hundreds of thousands!</p>
-  <p>Corpus callosum at the edge of forever, quasar, rogue shores of the cosmic ocean! Citizens of distant epochs permanence of the stars. Cosmic fugue Orion's sword, as a patch of light. Across the centuries, rich in heavy atoms finite but unbounded descended from astronomers vanquish the impossible worldlets brain is the seed of intelligence, Hypatia two ghostly white figures in coveralls and helmets are soflty dancing preserve and cherish that pale blue dot, hundreds of thousands stirred by starlight and billions upon billions upon billions upon billions upon billions upon billions upon billions?</p>
+  <h1>Session Hijacking with Kali</h1>
+  <p>Let's say that we want to see what someone is doing on their computer?
+      In this tutorial, we'll be hijacking cookie sessions to do just that!</p>
+  <h2>Preparing Kali</h2>
+    <ul style="padding-left:20px">
+    <li><h3>• &nbsp;&nbsp; Ettercap</h3></li>
+    <li><h3>• &nbsp;&nbsp; Hamster</h3></li>
+    <li><h3>• &nbsp;&nbsp; Ferret</h3></li>
+    </ul>
+    <br><br>
+    <p>Ferret is a nice little tool that runs with Hamster. It grabs session
+        cookies that travel across the LAN. Hamster is a proxy that "manipulates"
+        everything grabbed by Ferret. The only thing is that Ferret doesn't come
+        with Kali 64-bit version. In order to install it, we need to add the i386
+        (32-bit) repository. Then we can install it. For convenience, run this 1-line
+        script to install it:</p>
+    <p>dpkg --add-architecture i386 && apt-get update && apt-get install ferret-sidejack:i386</p>
+    <h2>Setting Up the MitM Attack Vectors Ettercap</h2>
+    <p>We're going to use Ettercap to ARP poison the targets. Open it up and do:</p>
+    <ul style="padding-left:20px">
+    <li><h3>1. &nbsp;&nbsp; Sniff --> Unified Sniffing</h3></li>
+    <li><h3>2. &nbsp;&nbsp; Hosts --> Scan for Hosts</h3></li>
+    <li><h3>3. &nbsp;&nbsp; MitM --> Arp Poisoning and ONLY check Sniff Remote Connections</h3></li>
+    <br><img src="img/1.jpg" alt="Mountain View" >
+    <br><br>
+    <li><h3>4. &nbsp;&nbsp; Start --> Start Sniffing</h3></li>
+    </ul>
+    <br><br>
+    <h2>Hamster & Ferret</h2>
+    <p>Now that Ferret is installed, all we have to do is run ferret -i interface. For instance,
+        I'll be using Ethernet.You should quickly be getting output like this.
+        To run Hamster, just type hamster in a new terminal.</p>
+    <img src="img/2.jpg" alt="Mountain View" >
+    <br><br><br><br>
+    <h2>Viewing the Cookie Sessions</h2>
+    <p>To view the cookies that we have "sidejacked," simply open your web browser and type in the
+        URL box localhost:1234 or anything of the equivilent (i.e., 127.0.0.1:1234). You should get a screen like this:</p>
+    <img src="img/3.jpg" alt="Mountain View" style="width:850px;">
+    <br><br><br><br>
+    <p>Now we need to tell Hamster the interface to listen on. Go to adapters and enter the same interface you entered in Ferret.</p>
+    <img src="img/4.jpg" alt="Mountain View" >
+    <br><br><br><br>
+    <p>Press Submit Query and let the magic begin (you'll have to wait a while before you get lots of cookies).</p>
+    <h2>Viewing Cookies</h2>
+    <p>After a while you'll start to see some IP addresses pop up (including yours). To view the cookies, simply click on the IP address.</p>
+    <img src="img/5.jpg" alt="Mountain View">
+    <br><br><br><br>
+    <p>Just click on the URLs the view them. For example, I just was talking about stuff in a chat, but I left. I didn't
+        trust one of the members and guess what? I was right.</p>
+    <img src="img/6.jpg" alt="Mountain View" >
+    <br><br><br><br>
+    <p>Now, I didn't see it in the chat, but I decided to sidejack him just in case, and guess what I found?</p>
+    <img src="img/7.jpg" alt="Mountain View" >
+    <br><br><br><br>
+    <p>So I know what he said, but he doesn't know I know it....
+        If you want to view the original cookies, just click that cookies button and replacehamster with localhost:1234
+        at the beginning of the URL, or you can open up the .pcap file in the home folder.</p>
+    <h2>Mission Complete</h2>
+    <p>Now we can view everything this guy says, and he won't ever know it. This same attack can also be used to hijack someone's session
+        while they're logged in to a website, making things much faster than cracking passwords. Cool, eh?</p>
+    <p>I hope you had as much fun as I did.</p>
+
+
 </article>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
         <script src="js/index.js"></script>
 
-    
-    
-    
+
+
+
   </body>
 </html>

@@ -23,10 +23,21 @@ h1 {
   margin-bottom: 48px;
 }
 
+h2 {
+  font-size: 26px;
+  margin-bottom: 38px;
+}
+
 p {
   font-size: 18px;
   line-height: 30px;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 25px;
+  margin-bottom: 8px;
 }
 
 nav {
