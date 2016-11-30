@@ -1,5 +1,14 @@
 /* Created by Jason Rametta*/
-var stocks = ["TSLA","AAPL"/*,"TWTR","TSLA","MSFT", "FB"*/];
+
+var ask = prompt("How many stock do you want to check");
+var stocks = [];
+
+for(var i=0; i<=ask.toString()-1;i++){
+    var tempStock = prompt("Enter stock "+i+1)
+    stocks.push(tempStock);
+}
+//var stocks = ["TSLA","AAPL"/*,"TWTR","TSLA","MSFT", "FB"*/];
+
 var data = [];
 
 /* Setup chart then get data */

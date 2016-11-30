@@ -26,11 +26,11 @@
 
           for(var y=0; y<timeN; y++){
               year++;
-              var temp1 = stat1*0.10;
+              var temp1 = stat1*0.1;
               stat1 = stat1+temp1;
-              var temp2 = stat2*0.10;
+              var temp2 = stat2*0.1;
               stat2 = stat2+temp2;
-              var temp3 = stat3*0.10;
+              var temp3 = stat3*0.1;
               stat3 = stat3+temp3;
               //Adds data
               data.addRows([
@@ -41,7 +41,7 @@
 
 
         var options = {
-          title: 'ACC Growth Performance',
+          title: 'ACC Mutual Growth Performance',
           curveType: 'function',
           legend: { position: 'bottom' }
         };
@@ -52,18 +52,18 @@
       }
     </script>
   </head>
-  <body style="background-color:powderblue;">
+  <body style="background-color:#1684FB;">
     <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
     <style>
 
     h1 {
     text-align: center;
-    color: green;
-    font-family: 'Poiret One', cursive;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
     font-size: 300%;
     }
     </style>
-    <h1>Google Data Input Reference Page</h1>
+    <h1>Data Input Reference</h1>
     <div id="curve_chart" style="width: 900px; height: 500px; margin: auto"></div>
 
   </body>
