@@ -1,3 +1,3 @@
 # StockTickers
 
-JS Data Visualization Test
+JS Data Visualization Tests
